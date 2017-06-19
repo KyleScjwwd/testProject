@@ -1,0 +1,65 @@
+/* CSS Document */
+body {width:100%;height:100%;padding:0px;margin:0px; scrollbar-3dlight-color:#6A859F;scrollbar-arrow-color:#6A859F;scrollbar-base-color:#DCE7E1;scrollbar-darkshadow-color:#6A859F;scrollbar-face-color:white;scrollbar-highlight-color:#DCE7E1;scrollbar-shadow-color:#DCE7E1;}
+html {overflow:auto;width:100%;height:100%;}
+body,td,input,select,textarea {font-size:12px;font-family: Arial, Helvetica, sans-serif;}
+a ,.menu-sub-dom {color:#0064A1; text-decoration:none;}
+select {border:0px;}
+.red {color:#FF0000;}
+
+/*图标*/
+.ui-ico { display:inline-block; width:16px; height:16px; margin:0px!important;padding:0px!important; background-image:url(../images/ehr.gif); background-repeat:no-repeat;}
+.ui-ico.sub-menu { background-position:0px -31px;}
+
+/*公共*/
+.menu-sub-dom {cursor:hand;}
+.inputs { border:1px solid #7F9DB9;height:19px; line-height:19px;margin:0px;padding:0px;padding-left:3px;}
+.button {cursor:hand;border:0px;padding:0px; height:21px!important; line-height:18px!important;height:15px;line-height:15px; overflow:visible;padding-left:8px;padding-right:8px;border:1px solid #CFCFCF; background-image:url(../images/ehr.gif); color:#000; background-position:0px -376px;background-color:#F4F4F4; }
+.button:hover { background-position:0px -550px;}
+.button.colors {color:#FF5A00;}
+.input-focus { background-color:#FFFF99;}
+.ehr-action-selectcount {color:#FF0000;margin:3px;}
+
+/*sub*/
+.sub-access, .sub-skin , .sub-search ,.sub-export ,.sub-attaction {display:none;}
+.sub-menu-box {position:absolute; left:0; top:0; background-color:#fff; z-index:99998;display:none; border:1px solid #999;}
+.sub-menu-box ul {border-right:0px solid #8DA3B7;margin:0px;border-bottom:0px solid #8DA3B7;}
+.sub-menu-box ul li {display:inline-block;padding-left:22px;cursor:hand; height:25px; line-height:25px;}
+.sub-menu-box ul li:hover ,.over { background-color:#003399;color:#fff;}
+.sub-menu-box ul .first {padding-top:8px;}
+.sub-menu-box ul .last {padding-bottom:6px;}
+.sub-menu-box ul li.select {background-image:url(selected.gif); background-repeat:no-repeat; background-position:center; background-position:left;}
+
+/*open*/
+.open-mask {}
+.open-dom {}
+
+
+.open-mask { position:absolute; left:0px; top:0px; width:100%; height:100%;z-index:100; display:none;background-color:#000; text-align:center;filter:alpha(opacity=15); }
+.open-dom {padding:5px;position:absolute; left:0px; top:0px;background-color:#A9CEE1;z-index:101;}
+.open-dom .open-box { background-color:#E5F2F9; border:1px solid #fff;padding:3px;}
+.open-dom .open-title {height:25px; line-height:23px; font-weight:bold;font-size:13px;}
+.open-dom .open-main { border:1px solid #CCE1ED; padding:10px;padding-left:15px;padding-right:15px;padding-bottom:0px;background-color:#F5F8FE;}
+.open-dom .open-main form {margin:0px;padding:0px;}
+.open-dom .open-foot { height:25px; line-height:25px; text-align:center;padding-top:5px;}
+.open-dom .open-title .open-title-left {float:left;}
+.open-dom .open-title .open-title-right {float:right;}
+.open-dom .open-title .open-title-right .ui-ico.close {cursor:hand; background-position:0px -496px; width:18px; height:18px; margin-top:1px!important;}
+.open-dom .saveing ,.open-dom .message { font-weight:normal!important; position:static; z-index:1; left:0px; top:0px; height:29px; line-height:29px;color:#0033CC; display:none;}
+.open-dom .message {color:#FF3300;}
+.form-row {margin-bottom:8px;}
+.form-row b {font-weight:normal;display:inline-block; width:100px; height:21px; line-height:19px;}
+.form-row span { display:inline-block;}
+.ui-ico.loading {background-image:url(../../common/load.gif)!important;}
+.ui-ico.down {width:7px; background-position:0px -208px;margin-left:2px;background-image:url(grid.gif)!important;}
+
+/*tip*/
+.tip { position:absolute; left:0px; top:0px; z-index:999; display:none; cursor:hand;}
+.tip .center {border:0px solid #FF0000;padding:3px;padding-top:5px;background-color:#FF0000;color:#fff;padding-left:6px;}
+.tip .foot {}
+.tip .foot span {line-height:6px;font-size:1px;display:block; height:6px; width:6px; background-image:url(../images/ehr.gif); background-position:0px -438px;margin-left:10px;}
+.tip .foot span.top { background-position:-12px -438px;}
+
+/*message*/
+.post-message {position:absolute; left:0px; top:0px;z-index:999; display:none;font-weight:bold;color:#fff;line-height:31px!important;height:31px!important;padding-left:10px;padding-right:10px;background-color:#75B2E7; padding-top:0px!important;height:23px;padding-top:8px;}
+.ui-ico.ok {background-image:url(../images/ehr.gif)!important;background-position:-16px -450px;width:18px!important;}
+.ui-ico.loadmessage {background-image:url(../../common/load.gif)!important;}

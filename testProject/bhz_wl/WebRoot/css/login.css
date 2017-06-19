@@ -1,0 +1,56 @@
+/* BASIC RESET */
+ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, body, html, p, blockquote, fieldset, input, dl, dt, dd {
+	margin:0;
+	padding:0;
+}
+/* HTML ELEMENTS */
+body {
+	background-color:#1b2940;
+	font:80% Georgia, 'Times New Roman', serif;
+	letter-spacing:1;
+}
+.clearfix:after{clear:both;content:"\200B";display:block;height:0;}  
+.clearfix{*zoom:1;}
+/* COMMON CLASSES */
+.break {
+	clear:both;
+}
+/* HEADER */
+#header {
+	height:660px; 
+}
+.headerimg {
+	background-position: center top;
+	background-repeat: no-repeat;
+	width:100%;
+	height:660px;
+	position:absolute;
+}
+.fl { float:left;}
+.fr { float:right;}
+.main1 { width:1125px; height:554px; margin:0 auto; }
+.main_logo { margin:30px 0 0 0;}
+.logo_word p.logo_wordp1 { font:29px "微软雅黑"; color:#fff; line-height:40px; text-indent:0.5em;}
+.logo_word p.logo_wordp2 { font:12px "微软雅黑"; color:#fff; line-height:20px; text-indent:1em; letter-spacing:-0.4px;}
+/*loginBox*/
+.loginBox { margin-top:140px; display:inline;}
+.loginBox .loginTop { background:url(../images/top_line1.png); width:318px; height:16px;}
+.loginBox .loginBottom { background:url(../images/top_line3.png); width:318px; height:15px;}
+.loginBox  .loginBoxC { background:url(../images/top_line2.png) repeat-y; width:318px; height:auto;}
+.loginBox  .loginBoxC .Userlogin { width:280px; margin:0 auto; }
+.loginBox  .loginBoxC .Userlogin .userTit { line-height:38px; font-weight:bold; font-size:14px; border-bottom:1px solid #88bee5; text-indent:1em; color:#5d5b5b;}
+.loginBox  .loginBoxC .Userlogin .userTit span {margin-left:30px;;color:red;font-size:12px;}
+.loginBox  .loginBoxC .Userlogin .userloginBox { border-top:1px solid #f3f1f1; padding:10px 0;}
+.useryz {line-height:50px; }
+.useryz dt { float:left;width:66px; float:left; color:#5d5b5b; font-size:14px; border:1px solid red}
+.loginText { border:1px solid #add3e4; height:28px; width:170px; padding-left:5px;line-height:28px;}
+.checkText {border:1px solid #add3e4; height:28px; width:80px; padding-left:5px;}
+.loginBox  .loginBoxC .Userlogin .userloginBox .loginTable tr.logintd1 { line-height:50px;}
+.loginBox  .loginBoxC .Userlogin .userloginBox .loginTable td.logintd2 { width:66px; float:left; color:#5d5b5b; font-size:14px; text-align:right;}
+.yanzdd { width:50px; height:30px; background:#ccc; float:left; margin-left:10px; }
+.loginBox  .loginBoxC .Userlogin .userloginBox .loginTable td.logintd3 label { color:#fff;}
+.loginBox  .loginBoxC .Userlogin .userloginBox .loginTable td.logintd3 a { color:#ffd200; padding-left:24px; text-decoration:none;}
+.userBTn .login { background:url(../images/login.png); width:81px; height:32px; border:none; cursor:pointer; float:left;}
+.userBTn a { display:block; background:url(../images/register.png); width:81px; height:32px; float:left; margin-left:24px;}
+.loginfoot { background:url(../images/bottombg-1.png) repeat-x; height:31px; line-height:31px; color:#fff; width:100%; bottom:0; margin-top:-31px;}
+.footword { width:1125px; margin:0 auto;}

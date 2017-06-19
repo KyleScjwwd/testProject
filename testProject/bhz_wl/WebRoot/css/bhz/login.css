@@ -1,0 +1,19 @@
+@charset "utf-8";
+/* CSS Document */
+.login{ background:url(../../images/bhz/loginbg_03.png) no-repeat; width:519px; height:272px; margin:0 auto; margin-top:210px;}
+.login a{ display:block;}
+.login .login_top{padding-left:20px;  padding-top:10px;width:495px;height:58px; margin:0 2px; float:left;margin-top:10px; line-height:60px; background:url(../../images/bhz/abg_07.png) repeat-x bottom left;}
+.login_C{ width:485px; margin:0 5px;}
+.login_L{ float:left; width:240px; margin-left:5px;}
+.login_R{ margin-left:10px;float:left; width:230px; margin-top:2px;}
+.login_R a{ display:block; float:left;}
+.login_R .user{ background:url(../../images/bhz/user_11.png) no-repeat; width:230px; height:42px;}
+.login_R .login_box{ height:135px; margin-top:42px; width:228px; border-left:1px solid #A39F9B; border-right:1px solid #A39F9B;border-bottom:1px solid #A39F9B;}
+.login_R .login_box a{ margin:10px; width:228px; border:none;}
+.login_box input{ margin-left:5px; border:1px solid #A39F9B; width:144px; height:24px; line-height:24px;}
+.login_box .login_dl{ margin-left:28px; background:url(../../images/bhz/lgbg_03.png) no-repeat; width:77px; height:24px; line-height:24px; text-align:center;
+border:none;}
+.login_box .login_qx{ background:url(../../images/bhz/qxbg_03.png) no-repeat; width:77px; height:24px; line-height:24px; text-align:center; border:none;}
+.foot{ height:60px; width:100%; background:#5A89C4; position:absolute; bottom:0px;}
+.footer{ width:1000px; margin:0 auto; color:#FFF;}
+.footer p{ margin:10px auto;}

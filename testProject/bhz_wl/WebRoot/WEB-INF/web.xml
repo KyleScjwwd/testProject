@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.4" 
+	xmlns="http://java.sun.com/xml/ns/j2ee" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee 
+	http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+	
+	<!-- struts2漏洞补丁 
+	<listener> 
+  		<listener-class>com.htht.commonweb.listener.MyServletContextListener</listener-class> 
+ 	</listener> -->
+	<!-- 配置spring监听器 -->
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+	<!-- 程序从此处开始加载.xml文件，并执行 -->
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>/WEB-INF/applicationContext*</param-value>
+	</context-param>
+	
+	<filter>
+        <filter-name>OpenSessionInView</filter-name>
+        <filter-class>org.springframework.orm.hibernate3.support.OpenSessionInViewFilter</filter-class>
+        <init-param>
+            <param-name>singleSession</param-name>
+            <param-value>false</param-value>
+        </init-param>
+    </filter>
+    <!-- session超时定义,单位为分钟 -->
+	<session-config>
+		<session-timeout>20</session-timeout>
+	</session-config>
+    <!-- 配置过滤器 -->
+	<filter>
+		<filter-name>Ecodingfilter</filter-name>
+		<filter-class>
+			com.bhz.intercept.filter.EcodingFilter
+		</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>Ecodingfilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+    
+    <filter-mapping>
+        <filter-name>OpenSessionInView</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+    <!-- struts2 配置 -->
+    <filter>
+		<filter-name>struts2</filter-name>
+		<filter-class>
+			org.apache.struts2.dispatcher.FilterDispatcher
+		</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>struts2</filter-name>
+		<url-pattern>*.action</url-pattern>
+		<dispatcher>REQUEST</dispatcher>
+		<dispatcher>INCLUDE</dispatcher>
+		<dispatcher>FORWARD</dispatcher>
+	</filter-mapping>
+    <!-- XFire 配置-->
+	<servlet>   
+    	<servlet-name>XFireServlet</servlet-name>   
+    	<servlet-class>org.codehaus.xfire.spring.XFireSpringServlet</servlet-class>   
+  	</servlet>   
+  	<servlet-mapping>   
+    	<servlet-name>XFireServlet</servlet-name>   
+    	<url-pattern>/servlet/XFireServlet/*</url-pattern>   
+  	</servlet-mapping>   
+  	<servlet-mapping>   
+    	<servlet-name>XFireServlet</servlet-name>
+    	<url-pattern>/services/*</url-pattern>
+  	</servlet-mapping>
+  	<error-page>
+		<error-code>404</error-code>
+		<location>/wrong.jsp</location>
+	</error-page>
+	
+	<error-page>
+		<error-code>500</error-code>
+		<location>/wrong.jsp</location>
+	</error-page>
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+
+</web-app>

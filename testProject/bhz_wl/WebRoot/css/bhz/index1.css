@@ -1,0 +1,56 @@
+@charset "utf-8";
+/* CSS Document */
+.title{background:#0085ca;border-bottom:4px solid #015e8e;}
+.top{width:1210px; margin:0 auto; height:117px; background:url(images/topbg_01.jpg) no-repeat top center #0085ca;}
+.topone{ width:100%; height:70px;}
+.logo{ padding-top:24px; float:left; width:743px; height:46px;}
+.out{ float:right;}
+.out span{ display:block; height:51px; float:left;}
+.out .outtwo{ float:right;  width:335px; height:51px; line-height:51px; float:left;}
+.outtwo p{display:block; height:51px; max-width:12em; overflow:hidden; line-height:51px; float:left;}
+.outtwo a{ display:block; float:left; height:29px; line-height:29px; color:#036AB5;  margin-top:10px; margin-left:10px;}
+.user{ background:url(images/user_06.png) no-repeat;padding-left:26px;width:58px;}
+.outbg{ background:url(images/outbg_06.png) no-repeat;padding-left:28px; width:56px;}
+.topT{width:100%;margin:0 auto; margin-top:8px;text-align: center;}
+.toptwo{ width:930px; margin:0 auto;}
+.toptwo span{display:block; float:left;width:5px; height:37px;}
+.menuL{ background:url(images/menubg_15.png) no-repeat; }
+.menuR{ background:url(images/menurbg_15.png) no-repeat;}
+.toptwo ul{ float:left; background:url(images/menubg_14.png) repeat-x; height:37px;}
+.toptwo ul li{ float:left; width:110px; height:37px; line-height:37px; background:url(images/linebg_16.jpg) no-repeat right center;}
+.toptwo li a{ display:block; height:37px; line-height:37px; text-align:center; color:#FFF;}
+.toptwo .nobg{ background:none;}
+.toptwo .onbg{ background:url(images/hoverbg_15.jpg) no-repeat;}
+.toptwo .noback{ background:url(images/menubg_14.png) repeat-x; width:110px;}
+.content{ width:100%; background:#F2F5FA; clear:both;}
+.conL{height:82%; width:22%; background:#F2F5FA  left bottom; float:left; text-align:center; vertical-align:middle; clear:both; }
+.contop h2{ background:url(images/contopbg_03.jpg) repeat-x; width:100%; height:35px; line-height:35px;}
+.leftbg{ width:220px; margin:0 auto; margin-top:13px;}
+.leftbg1{ background:url(images/leftbg_07.png) no-repeat; float:left;width:81px; height:87px;}
+.leftbg2{ float:right; width:133px; text-align:left;}
+.leftbg2 span{ display:block; float:left; width:100%; height:27px; line-height:27px;}
+.leftbg2 span em{ color:red;}
+.contop .tongzhi h2{ background:url(images/titlebg_10.jpg) repeat-x left top; color:red; font-size:14px; font-weight:bold; height:40px; line-height:40px;}
+.contop .tongzhi{ margin-top:20px;}
+.conL .tzcontent{text-align:left; text-indent:2em; padding:0 20px; height:80px; overflow:auto;}
+.conL .tzfoot{ bottom:0; position:relative; }
+.contop p{ text-align:right; display:block; padding-right:10%; height:20px; line-height:20px;}
+.tel{background:#F2F5FA repeat-y; height:60%; z-index:-1; position:absolute;bottom:0;  width:22%;margin-top:30px; }
+.telbg{ position:absolute; margin:0 auto;bottom:0;  width:216px; height:182px; background:url(images/tel_03.jpg) no-repeat bottom center; z-index:999;}
+
+.conR{width:76.5%; vertical-align:bottom;float:left;}
+.conR h2{ background:url(images/nowbg_03.jpg) repeat-x; width:100%; height:35px; line-height:35px; padding-left:20px; }
+.conR .conRone h2{ background:url(images/conRbg_07.png) repeat-x; width:100%;border:1px solid #D7D7D7; margin-top:5px;}
+.conRone h2 a{ display:block; background:url(images/conRh2bg_07.jpg) no-repeat left center; padding-left:40px;}
+.conRone ul{ width:100%;clear:both; overflow:hidden; border:1px solid #D7D7D7; height:210px;}
+.conRone li{ float:left; height:60px; width:304px;background:url(images/conRulbg_13.jpg) repeat-x; border:1px solid #0085CA; margin-top:15px; margin-left:15px; text-align:center; line-height:25px;}
+.conRone li p{ padding-top:5px;}
+.conRone li em{ color:red;}
+ 
+.conR .conRtwo h2{ background:url(images/conRbg_07.png) repeat-x; width:100%;border:1px solid #D7D7D7; margin-top:5px;}
+.conRtwo{ margin-top:10px;}
+.conRtwo h2 a{ display:block; background:url(images/conRulbg1_21.jpg) no-repeat left center; padding-left:40px;}
+.conRtwo ul{ height:210px; width:100%;clear:both; overflow:hidden; border:1px solid #D7D7D7;}
+.conRtwo li{ float:left; height:60px; width:304px;background:url(images/conRulbg_13.jpg) repeat-x; border:1px solid #0085CA;margin-top:15px; margin-left:15px; text-align:center; line-height:25px;}
+.conRtwo li p{ padding-top:5px;}
+.conRtwo li em{ color:red;} 

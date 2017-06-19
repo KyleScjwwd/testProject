@@ -1,0 +1,109 @@
+﻿/*reset.css*/
+body, div, dl, dt, dd, ul, ol, li,
+h1, h2, h3, h4, h5, h6, pre, code,
+form, fieldset, legend, input, button,
+textarea, blockquote, th, td,p { margin: 0; padding: 0; color: #333; font-size: 12px; font-weight: normal;  }
+fieldset, img { border: 0; }
+body { font-size: 12px;line-height: 1.5; font-family: Arial,Verdana,"宋体"; }
+/* remember to define focus styles! */
+:focus { outline: 0; }
+/*去除获得焦点元素的外边框*/
+address, caption, cite, code, dfn, em, strong, th, var, optgroup { font-style: normal; font-weight: normal; }
+h1, h2, h3, h4, h5, h6 { font-size: 100%; font-weight: normal; }
+abbr, acronym { border: 0; font-variant: normal; }
+input, button, textarea, select, optgroup, option { font-family: inherit; font-size: inherit; font-style: inherit; font-weight: inherit; }
+code, kbd, samp, tt { font-size: 100%; }
+/*@purpose To enable resizing for IE */
+/*@branch For IE6-Win, IE7-Win */
+input, button, textarea, select { *font-size: 100%; }
+ol, ul { list-style: none; }
+/* tables still need 'cellspacing="0"' in the markup */
+table.narrow { border-collapse: collapse; border-spacing: 0; }
+caption, th { text-align: left; }
+sup, sub { font-size: 100%; vertical-align: baseline; }
+/* remember to highlight anchors and inserts somehow! */
+a { color: #333; }
+a:hover, a:focus { color: #F80; }
+:link, :visited, ins { text-decoration: none; }
+blockquote, q { quotes: none; }
+blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; }
+texearea { resize: none; }
+.fl { float: left;}
+.fr { float: right; }
+.clearfix:after { content: "."; display: block; height: 0; line-height: 0; font-size: 0; overflow: hidden; visibility: hidden; clear: both; }
+.clearfix { *zoom: 1; *display: table; }
+.clearboth { clear: both; }
+/*css reset end*/
+img { border: none; }
+
+
+.wraper {min-width:1000px; width:100%; }
+.head { height:117px;background:url("images/head.jpg") no-repeat scroll 0 0 transparent; }
+.p_left { width:231px;position:relative;overflow:hidden;  }
+.dtree { overflow-y:auto; }
+.p_right { margin:0px; padding:0px;  }
+.pr_tit { padding-left:20px; }
+.pr_tit .item { width:115px;height:30px;text-align:center;cursor:pointer;float:left;position:relative;top:5px;
+line-height:30px;display:block;
+}
+.pr_tit .curr,.pr_tit .item:hover { background:url("images/pr_tititem.png") no-repeat scroll 0 0; }
+.pr_tit2 { padding:25px 0 10px 0;background:url("images/ico/line.jpg") repeat-x scroll 0 bottom; }
+.pr_tit2 .item { float:left;margin-left:20px;background:url("images/ico/ico_bd.jpg") no-repeat scroll 0 center;padding-left:20px; }
+.prmc_l { width:31px;}
+.prmc_l .item { text-align:center;padding:10px 5px;background:url("images/rlbg2.jpg") repeat-y scroll 0 0; margin-bottom:10px;color:#fff;cursor:pointer; }
+ 
+.prmc_l .curr,.prmc_l .item:hover { background:url("images/rlbg1.jpg") repeat-y scroll 0 0;}
+.prm_cont { padding-top:10px; }
+.prmc_r { padding-left:20px;}
+.prmc_r .tit {  }
+.ipt_comm { border:1px solid #ccc;height:20px;line-height:20px;width:150px; }
+.searchbox { padding:20px 0; }
+.btn_search { vertical-align:middle;margin-left:20px; }
+.tab_comm { min-width:800px; }
+.tab_comm ,.tab_comm td,.tab_comm th { border-collapse:collapse;border:1px solid #c7c7c7;text-align:center;}
+.tab_comm th { height:36px; }
+/*.tab_comm td { height:36px; }*/
+.tab_comm tr th { background:url("images/tab_hd.jpg") repeat-x scroll 0 0; }
+.jiantou { width:9px;height:41px;background:url("images/ico/jiantou_l.jpg") no-repeat scroll 0 0;position:absolute;right:0;top:40px;cursor:pointer; clear:both;}
+ .jiantou2 { width:9px;height:41px;background:url("images/ico/jiantou_r.jpg") no-repeat scroll 0 0;position:absolute;right:0;top:40px;cursor:pointer; clear:both;}
+.hd_nav { float:left;padding:15px 0 0 100px; }
+.hd_nav .item {cursor:pointer; margin-right:3px; display:block;height:28px;width:116px;background:url("images/hd_navitem1.png") no-repeat scroll 0 0;float:left;line-height:28px;text-align:center; }
+.hd_nav .curr,.hd_nav .item:hover { background:url("images/hd_navitem2.png") no-repeat scroll 0 0;color:#fff;}
+.hd_r { float:right; }
+.hd_r a { color:#fff; }
+.p_left .tit { height:35px;background:url("images/tit1.jpg") no-repeat scroll 0 0;font:bold 12px/35px "宋体";padding-left:30px; }
+
+
+/*712添加*/
+.logo { margin:0px 10px 11px 0px; margin-left:-70px;}
+.logo p { color:#fff; font-family:"微软雅黑"; padding-left:20px;}
+.logo p.p1 { font-size:22px; line-height:34px;}
+.logo p.p2 { font-size:9px; line-height:20px; letter-spacing:-0.2PX;}
+
+.leftbodybg { padding:0;margin:0; }
+.centerbody { background:url("images/slidbg.png") repeat-y scroll right 0 transparent;padding:0;margin:0;  }
+.td_pages { background:#E7E7E7; }
+.pages a { padding:0 3px; }
+.td_pages .pages{ text-align:right;padding-right:20px; }
+.pages .p_red { color:#c80000; }
+.opt_btn { background:url("images/btn_opt.jpg") no-repeat scroll 0 0 transparent;width:67px;height:26px;margin-right:10px;border:none; color:#fff;line-height:26px;text-align:center; }
+.pages .p_txtno { height:12px;width:28px;height:18px;border:1px solid #ccc; }
+
+.tab_comm td a { color:#ad0000;}
+.tab_comm td a:hover { text-decoration:underline;}
+.tab_comm tr.bgfff td { background:#fff;}
+.qingjia { margin:1px 5px 0 0; display:inline-block; border:1px solid #d4d0c8;}
+.bingzhuang { width:1000px; margin:0 auto; margin-bottom:30px;}
+.bzlist { width:464px; height:auto; border:1px solid #c7c7c7; background-color:#fff; overflow:hidden; float:left; margin:50px 30px 0 0;}
+.bzlistTit { width:462px; height:42px; margin:1px; font:16px "微软雅黑"; text-align:center; line-height:42px; background-color:#e3e3e3; color:#2e2d2d;}
+
+.g3Tit { float:left; font-weight:bold; font-size:14px; padding-left:20px; }
+.g3add { float:right; margin-right:20px; display:inline;}
+.g3add span { background:url(../images/df/g3icon.png); width:15px; height:16px; display:block; float:left; margin:0 10px;}
+.g3add a { text-decoration:underline; color:#d50000;}
+.editg3 { background:url(../images/df/g3icon.png) 0 -19px no-repeat; width:16px; height:15px; display:block; float:left; margin:0 5px;}
+.deleteg3 {background:url(../images/df/g3icon.png) 0 -37px no-repeat; width:11px; height:15px; display:block; float:left;  margin:0 5px;}
+.opt_btn1 { background:url(../images/df/g4icon.jpg) ;width:47px;height:23px;margin-right:10px;border:none; color:#fff;line-height:23px;text-align:center; cursor:pointer;}
+.opt_btn2 { background:url(../images/df/g4icon.jpg) no-repeat 0 -23px;width:47px;height:23px;margin-right:10px;border:none; color:#fff;line-height:23px;text-align:center; cursor:pointer; }
+
+.prmc_l .item a { color:#fff; padding:10px 5px; display:block;}

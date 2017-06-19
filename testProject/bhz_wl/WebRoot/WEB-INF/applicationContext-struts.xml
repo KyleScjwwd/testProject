@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+	
+	<!-- 配置Action -->
+	<bean id="userLogin" class="com.bhz.action.LoginAction" scope="prototype">
+		<property name="loginService" ref="loginService"></property>
+		<property name="messageService" ref="messageService"></property>
+		<property name="authorizationService" ref="authorizationService"></property>
+		<property name="bhzService" ref="BHZService"></property>
+		<property name="signInService" ref="signInService"></property>	
+		<property name="bdService" ref="BDService"></property>
+	</bean>
+	<bean id="mainManager" class="com.bhz.action.MainAction" scope="prototype">
+		<property name="mainService" ref="mainService"></property>
+		<property name="countService" ref="countService"></property>
+		<property name="messageService" ref="messageService"></property>
+		<property name="bhzService" ref="BHZService"></property>
+	</bean>
+	<bean id="messageManager" class="com.bhz.action.MessageAction" scope="prototype">
+		<property name="mainService" ref="mainService"></property>
+		<property name="countService" ref="countService"></property>
+		<property name="messageService" ref="messageService"></property>
+		<property name="baoJingBaseService" ref="baoJingBaseService"></property>
+		<property name="baoJingPersonBaseService" ref="baoJingPersonBaseService"></property>
+	</bean>
+	<bean id="countManager" class="com.bhz.action.CountAction" scope="prototype">
+		<property name="mainService" ref="mainService"></property>
+		<property name="countService" ref="countService"></property>
+	</bean>
+	<bean id="BDAction" class="com.bhz.action.BDAction" scope="prototype">
+		<property name="bdService" ref="BDService"></property>
+		<property name="bhzService" ref="BHZService"></property>
+		<property name="userService" ref="UserService"></property>
+	</bean>
+	<bean id="BHZAction" class="com.bhz.action.BHZAction" scope="prototype">
+		<property name="bhzServive" ref="BHZService"></property>
+		<property name="bdService" ref="BDService"></property>
+		<property name="userServive" ref="UserService"></property>
+	</bean>
+	<bean id="UserAction" class="com.bhz.action.UserAction" scope="prototype">
+		<property name="userService" ref="UserService"></property>
+		<property name="bdService" ref="BDService"></property>
+		<property name="bhzServicce" ref="BHZService"></property>
+	</bean>
+	<bean id="intensityGradeAction" class="com.bhz.action.IntensityGradeAction" scope="prototype">
+		<property name="intensityGradeService" ref="intensityGradeService"></property>
+		<property name="bdService" ref="BDService"></property>
+		<property name="bhzServicce" ref="BHZService"></property>
+	</bean>
+	<bean id="designPHBAction" class="com.bhz.action.DesignPHBAction" scope="prototype">
+		<property name="designPHBService" ref="designPHBService"></property>
+		<property name="bdService" ref="BDService"></property>
+		<property name="bhzServicce" ref="BHZService"></property>
+		<property name="mainService" ref="mainService"></property>
+		<property name="intensityGradeService" ref="intensityGradeService"></property>
+	</bean>
+	<bean id="authorizationAction" class="com.bhz.action.AuthorizationAction" scope="prototype">
+		<property name="bdService" ref="BDService"></property>
+		<property name="userService" ref="UserService"></property>	
+		<property name="authorizationService" ref="authorizationService"></property>
+		<property name="bhzServive" ref="BHZService"></property>	
+	</bean>
+	<bean id="signInAction" class="com.bhz.action.SignInAction" scope="prototype">
+		<property name="signInService" ref="signInService"></property>
+		<property name="bdService" ref="BDService"></property>
+		<property name="bhzServicce" ref="BHZService"></property>
+	</bean>
+	<!-- 系统初始化 -->
+	<bean class="com.bhz.init.InitDataListener">
+    	<property name="messageService" ref="messageService"></property>
+    	<property name="mainService" ref="mainService"></property>
+	</bean>
+</beans>

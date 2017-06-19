@@ -1,0 +1,20 @@
+.page{margin-left:40%;margin-top: 10px; width:580px;font-size:12px;}
+.page ul li{float: left;height: 22px;line-height: 22px;cursor: pointer;list-style:none;}
+.page ul li:hover,li.pagenumber:hover{color:#F66;}
+.page .pageInfo{margin-left: 5px;}
+.page .pagenumber{margin-left:5px;}
+.page .start{width:54px;  padding:0 8px 0 0;text-align:right; height:22px; line-height:22px; display:block; text-align:right;background:url(../images/page/first.png) no-repeat;}
+.page .start_off{width:54px; padding:0 10px 0 0; text-align:right; background:url(../images/page/first_off.png) no-repeat; font-family:Arial,Helvetica,sans-serif;}
+.page .first{width:54px; padding:0 0px 0 0; height:22px; line-height:22px; display:block; text-align:right; background:url(../images/page/prev.png) no-repeat;}
+.page .first_off{width:54px; padding:0 0px 0 0; text-align:right; background:url(../images/page/prev_off.png) no-repeat; font-family:Arial,Helvetica,sans-serif;}
+.page .fleft{background:url(../images/page/left.png); width:5px;}
+.page .fcenter,.pagenumber li.nowPage{background:url(../images/page/right.png); padding:0 5px;}
+.page .fright{background:url(../images/page/right.png) right; width:5px;}
+.page .next{width:54px;margin-left:8px;padding:0px; height:22px; line-height:22px; display:block; text-align:left; background:url(../images/page/next.png) no-repeat;}
+.page .next_off{width:54px;margin-left:8px;padding:0px; text-align:left; background:url(../images/page/next_off.png) no-repeat; font-family:Arial,Helvetica,sans-serif;}
+.page .end{width:54px;margin-left:8px; padding:0 0 0 8px; height:22px; line-height:22px; display:block; text-align:left; background:url(../images/page/last.png) no-repeat;}
+.page .end_off{width:54px;margin-left:8px; padding:0 0 0 8px; text-align:left; background:url(../images/page/last_off.png) no-repeat; font-family:Arial,Helvetica,sans-serif;}
+.page .pagenumber li{color:#000; font-size:12px; font-family:Arial,Helvetica,sans-serif;}
+.page .pagenumber li.nowPage{color: #F70707;font-weight: bold;font-size: 14px;}
+.page select{padding:2px; height:22px; border:1px #CCC solid; background:#FFF; -moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px;}
+#totalPage,#currentPage{color:red;font-weight: bold;}

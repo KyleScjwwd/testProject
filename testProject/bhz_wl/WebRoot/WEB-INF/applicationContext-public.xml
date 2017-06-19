@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+	<!-- 
+	定时器
+	<bean id="addTbBaseDataJob" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="messageService"></property>
+		<property name="targetMethod" value="saveTbBaseDataForTread"></property>
+	</bean>
+	定时时间每5分钟执行调度1次
+	<bean id="zntaskSxTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean"> 
+		<property name="jobDetail">
+			<ref bean="addTbBaseDataJob"/>
+		</property>
+		<property name="cronExpression">			
+			<value>0 0/5 * * * ?</value>
+		</property>
+	</bean>
+	添加触发器
+	<bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+	  <property name="triggers">
+	  	<list>
+			<ref bean="zntaskSxTrigger"/>
+		</list>
+	  </property>
+	</bean>   
+	-->
+</beans>

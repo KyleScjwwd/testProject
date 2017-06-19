@@ -1,0 +1,94 @@
+﻿body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td 
+{
+	margin:0;
+    padding:0; 
+	font-size:12px; 
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+body{ 
+	text-align:left;
+	background-color:white;
+    }
+
+table{  
+    border-collapse:collapse;   
+    border-spacing:0; vertical-align:middle;
+}
+.pageTitle{font-size: 22px; display: inline-block;font-weight: bold; padding-bottom:10px;}
+.pageTitle2 td{font-size: 22px; display: inline-block;font-weight: bold; vertical-align:bottom;}
+/*html,body{height:100%;width:100%}*/
+img {border:0;}
+address,caption,cite,code,dfn,em,strong,th,var {font-style:normal;font-weight:normal; }
+ol,ul {list-style:none;}
+h1,h2,h3,h4,h5,h6 {font-size:100%;font-weight:normal;} 
+input{vertical-align:middle;}
+/* Init end*/
+a:link { COLOR: #0c6397; TEXT-DECORATION: none;}
+
+a:visited { COLOR: #0066cc; TEXT-DECORATION: none}
+
+a:active  { COLOR: #3333ff; TEXT-DECORATION: underline}
+
+a:hover   { COLOR: #ff0000; TEXT-DECORATION:underline}
+
+a:focus {outline:0;}/* for ff*/
+a {star:expression(this.onFocus=this.blur());}/* for Ie*/
+/*tip span style*/
+.tipSpanG{border:solid 2px #fff;position:absolute; left:100px; top:5px;padding:5px 10px; background-color:#68AF02;color:White; text-align:center; display:none; width:150px;white-space:normal;}
+.tipSpanR{border:solid 2px #fff;position:absolute; left:100px; top:5px;padding:5px 10px; background-color:#CC4444;color:White; text-align:center; display:none; width:150px;white-space:normal;}
+.tipSpanB{border:solid 2px #fff;position:absolute; left:100px; top:5px;padding:5px 10px; background-color:#132484;color:White; text-align:center; display:none; width:150px;white-space:normal;}
+/*loading div style*/
+.bodyDIV{ display:none;}
+#loadDiv{border:solid 2px white; background-color:#CC4444; color:White; font-size:12px;width:150px; padding:5px; margin:5px 10px;}
+#loadDiv img{ margin:0px 5px; width:16px; height:16px; overflow:hidden;zoom:1;}
+#loadDiv2{border:solid 2px white; position:absolute; background-color:#CC4444; color:White; font-size:12px;width:150px; padding:5px; margin:5px 10px; z-index:100;}
+#loadDiv2 img{ margin:0px 5px;}
+.lblTip{ display:block; color:Red; font-size:14px; font-weight:bold; margin:2px;}
+table.noBorderTable{ border:none; margin:0px;}
+table.noBorderTable tr td{ border:none; padding:0px;}
+.tipDiv{ border:solid 1px #ddd; color:Red; padding:5px; background-color:#FFFF80; margin-bottom:2px;}
+.hiddenAcc{ display:none;}
+.priceInput{ text-align:right;}/*价格input控件*/
+.tablesorter tr td.priceInput{ text-align:right;}
+.tablesorter td.printTD100{ text-align:center; width:100px;}/*打印TD 100px*/
+/*居中弹出遮罩层*/
+.mycenterdiv { 
+background-color: #F3F8F7; 
+border: 1px solid #FFFFFF; 
+line-height: 20px; 
+z-index:999; 
+width: 800px; 
+height: 400px; 
+left:32%; 
+top:20%; 
+margin-left:-150px!important;/*FF IE7 该值为本身宽的一半 */ 
+margin-top:-60px!important;/*FF IE7 该值为本身高的一半*/ 
+margin-top:0px; 
+position:fixed!important;/* FF IE7*/ 
+position:absolute;/*IE6*/ 
+_top:       expression(eval(document.compatMode && 
+            document.compatMode=='CSS1Compat') ? 
+            documentElement.scrollTop + (document.documentElement.clientHeight-this.offsetHeight)/2 :/*IE6*/ 
+            document.body.scrollTop + (document.body.clientHeight - this.clientHeight)/2);/*IE5 IE5.5*/ 
+} 
+.bg,.popIframe { 
+background:#ecc; display:none; 
+width: 100%; 
+height: 100%; 
+left:0; 
+top:0;/*FF IE7*/ 
+filter:alpha(opacity=50);/*IE*/ 
+opacity:0.5;/*FF*/ 
+z-index:1; 
+position:fixed!important;/*FF IE7*/ 
+position:absolute;/*IE6*/ 
+_top:       expression(eval(document.compatMode && 
+            document.compatMode=='CSS1Compat') ? 
+            documentElement.scrollTop + (document.documentElement.clientHeight-this.offsetHeight)/2 :/*IE6*/ 
+            document.body.scrollTop + (document.body.clientHeight - this.clientHeight)/2); 
+} 
+.popIframe { 
+filter:alpha(opacity=0);/*IE*/ 
+opacity:0;/*FF*/ 
+} 

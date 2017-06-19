@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+           http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.0.xsd
+           http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.0.xsd">
+
+	<!-- 配置DAO -->
+	<bean id="pageDao" class="com.bhz.util.PageUtils.PagingFactoryImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="tbBaseDao" class="com.bhz.dao.impl.TbBaseDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="tbParamSetDao" class="com.bhz.dao.impl.TbParamSetDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="tbBdDao" class="com.bhz.dao.impl.TbBdDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="tbBhzDao" class="com.bhz.dao.impl.TbBhzDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="tbMessageUserDao" class="com.bhz.dao.impl.TbMessageUserDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="tbBaoJingMainDao" class="com.bhz.dao.impl.TbBaoJingMainDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="tbBaoJingMainMergeDao" class="com.bhz.dao.impl.TbBaoJingMainMergeDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="tbBaoJingSubDao" class="com.bhz.dao.impl.TbBaoJingSubDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="tbBaoJingSubMergeDao" class="com.bhz.dao.impl.TbBaoJingSubMergeDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="userInfoDao" class="com.bhz.dao.impl.UserInfoDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="tbSendMsgLogDao" class="com.bhz.dao.impl.TbSendMsgLogDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="userAuthorityDao" class="com.bhz.dao.impl.UserAuthorityDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="tbIntensityGradeDao" class="com.bhz.dao.impl.TbIntensityGradeDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="tbDesignPhbDao" class="com.bhz.dao.impl.TbDesignPhbDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="tbBaseAuthorityDao" class="com.bhz.dao.impl.TbBaseAuthorityDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="tdMergeColsOrderDao" class="com.bhz.dao.impl.TdMergeColsOrderDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="tbDesignPhbmergeDao" class="com.bhz.dao.impl.TbDesignPhbmergeDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="userAuthorityInfoDao" class="com.bhz.dao.impl.UserAuthorityInfoDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="tbSignInDao" class="com.bhz.dao.impl.TbSignInDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="tbBaoJingBaseDao" class="com.bhz.dao.impl.TbBaoJingBaseDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="tbBaoJingPersonBaseDao" class="com.bhz.dao.impl.TbBaoJingPersonBaseDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="tbMessgeSendTypeDao" class="com.bhz.dao.impl.TbMessgeSendTypeDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<!-- 配置Service -->
+	<!-- 父类service -->
+	<bean id="baseService" class="com.bhz.service.BaseService">
+		<property name="tbBdDao" ref="tbBdDao"></property>
+		<property name="tbBhzDao" ref="tbBhzDao"></property>
+		<property name="tbBaoJingMainDao" ref="tbBaoJingMainDao"></property>
+		<property name="tbBaoJingMainMergeDao" ref="tbBaoJingMainMergeDao"></property>
+		<property name="tbBaoJingSubDao" ref="tbBaoJingSubDao"></property>
+		<property name="tbBaoJingSubMergeDao" ref="tbBaoJingSubMergeDao"></property>
+	</bean>
+	<!-- 子类service -->
+	<bean id="mainService" class="com.bhz.service.MainService" parent="baseService">
+		<property name="tbBaseDao" ref="tbBaseDao"></property>
+		<property name="tbParamSetDao" ref="tbParamSetDao"></property>
+		<property name="tbDesignPhbDao" ref="tbDesignPhbDao"></property>
+		<property name="tbDesignPhbmergeDao" ref="tbDesignPhbmergeDao"></property>
+		<property name="tdMergeColsOrderDao" ref="tdMergeColsOrderDao"></property>
+		<property name="pageDao" ref="pageDao"></property>
+	</bean>
+	<bean id="messageService" class="com.bhz.service.MessageService" parent="baseService">
+		<property name="pageDao" ref="pageDao"></property>
+		<property name="tbBaseDao" ref="tbBaseDao"></property>
+		<property name="tbMessageUserDao" ref="tbMessageUserDao"></property>
+		<property name="tbSendMsgLogDao" ref="tbSendMsgLogDao"></property>
+		<property name="tbParamSetDao" ref="tbParamSetDao"></property>
+		<property name="tbMessgeSendTypeDao" ref="tbMessgeSendTypeDao"></property>
+	</bean>
+	<bean id="loginService" class="com.bhz.service.LoginService">
+		<property name="userInfoDao" ref="userInfoDao"></property>
+		<property name="userAuthorityDao" ref="userAuthorityDao"></property>
+	</bean>
+	<bean id="countService" class="com.bhz.service.CountService" parent="baseService">
+		<property name="pageDao" ref="pageDao"></property>
+		<property name="tbBaseDao" ref="tbBaseDao"></property>
+		<property name="tbParamSetDao" ref="tbParamSetDao"></property>
+		<property name="tbIntensityGradeDao" ref="tbIntensityGradeDao"></property>
+	</bean>
+	<bean id="BDService" class="com.bhz.service.BDService" parent="baseService">
+		<property name="tbBaseDao" ref="tbBaseDao"></property>
+		<property name="tbDesignPhbDao" ref="tbDesignPhbDao"></property>
+		<property name="pageDao" ref="pageDao"></property>
+	</bean>
+	<bean id="BHZService" class="com.bhz.service.BHZService" parent="baseService">
+		<property name="tbBaseDao" ref="tbBaseDao"></property>
+		<property name="tbDesignPhbDao" ref="tbDesignPhbDao"></property>
+		<property name="tdMergeColsOrderDao" ref="tdMergeColsOrderDao"></property>
+		<property name="pageDao" ref="pageDao"></property>
+	</bean>
+	<bean id="UserService" class="com.bhz.service.UserService" parent="baseService">
+		<property name="userInfoDao" ref="userInfoDao"></property>
+		<property name="pageDao" ref="pageDao"></property>
+	</bean>
+	<bean id="intensityGradeService" class="com.bhz.service.IntensityGradeService">
+		<property name="tbIntensityGradeDao" ref="tbIntensityGradeDao"></property>
+		<property name="pageDao" ref="pageDao"></property>
+		<property name="tbDesignPhbDao" ref="tbDesignPhbDao"></property>
+		<property name="tbDesignPhbmergeDao" ref="tbDesignPhbmergeDao"></property>
+	</bean>
+	<bean id="designPHBService" class="com.bhz.service.DesignPHBService">
+		<property name="tbDesignPhbDao" ref="tbDesignPhbDao"></property>
+		<property name="tbDesignPhbmergeDao" ref="tbDesignPhbmergeDao"></property>
+		<property name="pageDao" ref="pageDao"></property>
+	</bean>
+	<bean id="authorizationService" class="com.bhz.service.AuthorizationService">
+		<property name="tbBaseAuthorityDao" ref="tbBaseAuthorityDao"></property>
+		<property name="userAuthorityInfoDao" ref="userAuthorityInfoDao"></property>
+	</bean>
+	<bean id="signInService" class="com.bhz.service.SignInService">
+		<property name="tbSignInDao" ref="tbSignInDao"></property>
+		<property name="pageDao" ref="pageDao"></property>
+	</bean>
+	<bean id="baoJingBaseService" class="com.bhz.service.BaoJingBaseService" parent="baseService">
+		<property name="tbBaoJingBaseDao" ref="tbBaoJingBaseDao"></property>
+		<property name="tbBaoJingPersonBaseDao" ref="tbBaoJingPersonBaseDao"></property>
+		<property name="tdMergeColsOrderDao" ref="tdMergeColsOrderDao"></property>
+		<property name="tbIntensityGradeDao" ref="tbIntensityGradeDao"></property>
+		<property name="pageDao" ref="pageDao"></property>
+	</bean>
+	<bean id="baoJingPersonBaseService" class="com.bhz.service.BaoJingPersonBaseService" parent="baseService">
+		<property name="tbBaoJingPersonBaseDao" ref="tbBaoJingPersonBaseDao"></property>
+		<property name="pageDao" ref="pageDao"></property>
+	</bean>
+</beans>

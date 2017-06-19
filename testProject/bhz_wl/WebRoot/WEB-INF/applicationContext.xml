@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+           http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.0.xsd
+           http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.0.xsd">
+    
+  	<!-- 配置数据源 -->
+    <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+		<property name="driverClassName" value="net.sourceforge.jtds.jdbc.Driver"></property>
+		<property name="url" value="jdbc:jtds:sqlserver://127.0.0.1:6643/BHZDB_HNWY_Website"></property>
+		<property name="username" value="sa"></property>
+		<property name="password" value="YK-SQL-2014."></property>
+	</bean>
+	<!-- 加载hibernate文件 -->
+    <bean id="sessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+        <property name="dataSource">
+        	<ref bean="dataSource"/>
+        </property>
+        <property name="hibernateProperties">
+            <props>
+                <prop key="hibernate.dialect">org.hibernate.dialect.SQLServerDialect</prop>
+                <prop key="hibernate.show_sql">true</prop>
+                <prop key="hibernate.format_sql">true</prop>
+                <prop key="hibernate.connection.release_mode">auto</prop>
+            </props>
+        </property>
+         <property name="mappingResources"> 
+            <list>
+            	<value>/com/bhz/pojo/TbBase.hbm.xml</value>
+            	<value>/com/bhz/pojo/TbBd.hbm.xml</value>
+            	<value>/com/bhz/pojo/TbBhz.hbm.xml</value>
+            	<value>/com/bhz/pojo/TbParamSet.hbm.xml</value>
+            	<value>/com/bhz/pojo/UserInfo.hbm.xml</value>
+            	<value>/com/bhz/pojo/TbMessageUser.hbm.xml</value>
+            	<value>/com/bhz/pojo/TbBaoJingMain.hbm.xml</value>
+            	<value>/com/bhz/pojo/TbBaoJingMainMerge.hbm.xml</value>
+            	<value>/com/bhz/pojo/TbBaoJingSub.hbm.xml</value>
+            	<value>/com/bhz/pojo/TbBaoJingSubMerge.hbm.xml</value>
+            	<value>/com/bhz/pojo/TbSendMsgLog.hbm.xml</value>
+            	<value>/com/bhz/pojo/UserAuthorityInfo.hbm.xml</value>
+            	<value>/com/bhz/pojo/TbIntensityGrade.hbm.xml</value>
+            	<value>/com/bhz/pojo/TbDesignPhb.hbm.xml</value>
+            	<value>/com/bhz/pojo/TbBaseAuthority.hbm.xml</value>
+            	<value>/com/bhz/pojo/TdMergeColsOrder.hbm.xml</value>
+            	<value>/com/bhz/pojo/TbDesignPhbmerge.hbm.xml</value>
+            	<value>/com/bhz/pojo/TbSignIn.hbm.xml</value>
+            	<value>/com/bhz/pojo/TbBaoJingBase.hbm.xml</value>
+            	<value>/com/bhz/pojo/TbBaoJingPersonBase.hbm.xml</value>
+            	<value>/com/bhz/pojo/TbMessgeSendType.hbm.xml</value>
+            </list>
+        </property> 
+    </bean>
+    <!-- 配置事务管理器 -->
+	<bean id="transactionManager"
+		class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>	
+	<!-- 配置事务的传播属性 -->
+	<tx:advice id="txAdvice">
+		<tx:attributes>
+			<tx:method name="insert*" propagation="REQUIRED" rollback-for="Exception"/>
+            <tx:method name="delete*" propagation="REQUIRED" rollback-for="Exception"/>
+            <tx:method name="update*" propagation="REQUIRED" rollback-for="Exception"/>
+            <tx:method name="save*" propagation="REQUIRED" rollback-for="Exception"/>
+            <tx:method name="add*" propagation="REQUIRED" rollback-for="Exception"/>
+            <tx:method name="set*" propagation="REQUIRED" rollback-for="Exception"/>
+            <tx:method name="*" read-only="true" />
+		</tx:attributes>
+	</tx:advice>
+	<!-- 在那些包下的那些类中拦截事务管理 -->
+	<aop:config>
+		<aop:pointcut id="allManagerMethod"
+			expression="execution(* com.bhz.service.*.*(..))"/>
+		<aop:advisor advice-ref="txAdvice"
+			pointcut-ref="allManagerMethod" />
+	</aop:config>  
+	
+	<!-- 引入XFire预配置信息 -->
+	<import resource="classpath:org/codehaus/xfire/spring/xfire.xml" />  
+
+	<!-- 将实体类与Spring连接到一起 -->
+	<bean id="getDataServiceImpl" class="com.bhz.webservice.impl.GetDataServiceImpl">
+		<property name="messageService" ref="messageService"></property>
+	</bean>  
+    <bean id="addressingHandler" class="org.codehaus.xfire.addressing.AddressingInHandler" /> 
+	
+	<!-- 业务服务bean --> 
+    <bean name="webService" class="org.codehaus.xfire.spring.ServiceBean">  
+        <property name="serviceBean" ref="getDataServiceImpl"></property>  
+        <property name="serviceClass" value="com.bhz.webservice.GetDataService"></property>  
+        <property name="inHandlers">  
+            <list>  
+                <ref bean="addressingHandler" />  
+            </list>  
+        </property>  
+    </bean>
+</beans>
